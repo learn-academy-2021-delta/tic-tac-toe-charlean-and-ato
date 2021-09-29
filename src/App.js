@@ -6,15 +6,33 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      squares: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+      board: [0, 0, 0, 0, 0, 0, 0, 0, 0]
+
     }
+  }
+
+  handleGamePlay= (index) => {
+    //destructuring
+    const {board} = this.state
+    this.setState({board: board})
   }
 
   render(){
     return(
       <>
         <h1>Tic Tac Toe</h1>
-        <Square />
+        <div className="gameboard">
+        {this.state.board.map((value, index) => {
+          return (
+              <Square
+                value={value}
+                  index={index}
+                  key={index}
+                  handleGamePlay={this.handleGamePlay}
+                />
+            )
+        })}
+        </div>
       </>
     )
   }
