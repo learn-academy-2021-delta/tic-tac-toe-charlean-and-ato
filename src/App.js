@@ -7,8 +7,6 @@ class App extends Component{
     super(props)
     this.state = {
       board: [null, null, null, null, null, null, null, null, null],
-      play1: 'X',
-      play2: 'O',
       history: [],
       xIsNext: true
     }
@@ -25,11 +23,12 @@ class App extends Component{
 
     let newHistory = this.state.history
     board[index] = this.state.xIsNext ? 'X' : 'O'
+    history.push(this.state.xIsNext ? 'x' : 'o')
     //   board[index] = "O"
-      this.setState({board: board, history: newHistory})
-      
+      this.setState({board: board, history: newHistory, xIsNext: !this.state.xIsNext})
+
     }
-  
+
 
 //  // Handle click on boxes on the board.
 //      handleBoxClick = (index) => {
