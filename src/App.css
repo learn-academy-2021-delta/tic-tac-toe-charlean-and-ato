@@ -1,7 +1,24 @@
+<<<<<<< HEAD
 .square {
+=======
+h1{
+  text-align: center;
+}
+
+.square{
+>>>>>>> 0b7695793bf223f0918f3bdfe471fc63924b60c6
   height: 200px;
   width: 200px;
   border: 2px solid black;
+  font-size: 10rem;
+  text-align: center;
+  font-weight: 900;
+}
+.gameboard {
+  display: flex;
+  width: 620px;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .gameboard {
